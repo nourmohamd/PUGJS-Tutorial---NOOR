@@ -1,0 +1,22 @@
+PUGJS is A Preprocessor Like Sass With CSS
+==========================================
+Note: PugJS Uses JavaScript To Compile The Code To HTML Language
+
+Installiation PUGJS
+===================
+1 - npm command prompt ===> npm install pug | npm i pug
+2 - npm command prompt ===> npm install pug-cli -g
+3 - For Check About Version Of PugJS ===> pug -V
+4 - For Get All Commandars ===> pug --help
+cli ===> Stands From Command Line Interface
+
+=========================================================
+===> How Do You Run PugJS File << Very Important >>  <===
+=========================================================
+1 - Open Node.js Command Prompt
+2 - Write ===> pug path-of-file-pug -w ===> For Make Watching For Pug File
+3 - For Out From Watching Mode Click ===> Ctrl + c
+4 - For Make Watching And Select Position Of File Render ===> pug path-of-file-pug -w -o new-path-for-file-render
+Note: In Previous Points It Will Convert Pug File To HTML In << One Line >>
+    If You Want To Render File In Multiline HTML Write:
+5 - pug path-of-file-pug -w -p
