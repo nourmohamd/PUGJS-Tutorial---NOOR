@@ -19,4 +19,104 @@ cli ===> Stands From Command Line Interface
 4 - For Make Watching And Select Position Of File Render ===> pug path-of-file-pug -w -o new-path-for-file-render
 Note: In Previous Points It Will Convert Pug File To HTML In << One Line >>
     If You Want To Render File In Multiline HTML Write:
-5 - pug path-of-file-pug -w -p
+5 - pug path-of-file-pug -w -P
+
+=====================
+=== Start Lessons ===
+=====================
+
+Lesson 1 ===> Types Of Doctype
+==============================
+1 - doctype ===> <!DOCTYPE html>
+2 - doctype html ===> <!DOCTYPE html>
+3 - ... And More ===> Search about doctype in pug
+
+Lesson 2 ===> The Indentation <<< المسافات >>>
+// Empty Spaces in The PugJs is very important
+//- Example 1:
+html 
+    head 
+    body 
+        div Mohamed Nour Abdo
+//- The output is :
+    <html> 
+        <head> </head>
+    <body> 
+        <div>Mohamed Nour Abdo</div>
+    </body>
+    </html>
+//- Example 2:
+div
+    div 
+        p Nour
+//- The output is :
+    <div>
+        <div>
+            <p>Nour</p>
+        </div>
+    </div>
+//- Example 3:
+doctype
+html 
+    head 
+        title My Pug Template 
+    body 
+        div 
+            span I am span
+//- The output is :
+    <!DOCTYPE html>
+    <html> 
+    <head> 
+        <title>My Pug Template </title>
+    </head>
+    <body> 
+        <div> <span>I am span</span></div>
+    </body>
+    </html>
+
+Lesson 3 ===> Tags + Elements (Build Elements in PugJS)
+//- Example 1:
+doctype
+html 
+    head 
+        title My Pug Template 
+    body 
+        div 
+            p Mohamed Nour
+            h1 a
+//- The outout is :
+    <!DOCTYPE html>
+    <html> 
+    <head> 
+        <title>My Pug Template </title>
+    </head>
+    <body> 
+        <div> 
+        <p>Mohamed Nour</p>
+        <h1>a</h1> // a is not Element, it's a text
+        </div>
+    </body>
+    </html>
+//- Example 2:
+doctype
+html 
+    head 
+        title My Pug Template 
+    body 
+        div 
+            p Mohamed Nour
+            h1: a Mohamed
+//- The output is :
+    <!DOCTYPE html>
+    <html> 
+    <head> 
+        <title>My Pug Template </title>
+    </head>
+    <body> 
+        <div> 
+        <p>Mohamed Nour</p>
+        <h1><a>Mohamed</a></h1> // a is an Element
+        </div>
+    </body>
+    </html>
+// You can use nautre Element Like <p> text </p> in PugJS
