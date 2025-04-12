@@ -120,3 +120,121 @@ html
     </body>
     </html>
 // You can use nautre Element Like <p> text </p> in PugJS
+
+Lesson 4 ===> Comments & Special Features
+Comments :
+1 - // This Comment Show in HTML File And in PugJS File
+2 - //- This Comment Show Just in PugJS File
+3 - //- 
+        This Multiple Commments (Doesn't Show in HTML File)
+4 - //
+        This Multiple Commments (Show in HTML File)
+//- عندما تنشأ عنصر بطريقة اتش تي ام ال في داخل البغ جي اس بعد سطر عادي فإنه سيتم التعامل معه على نفس السطر السابق له
+//- Example 1:
+p Mohamed 
+<a>Nour</a>
+//- <p>Mohamed </p><a>Nour</a>
+
+Lesson 5 ===> WhiteSpace Control
+1 - البغ جي اس يحذف الفراغات بين العناصر تلقائياً
+        2 - المسافة داخل العنصر لا تحذف يعني بالمنطق يعتبرها محرف
+        3 - في حال كتبت اي سيعتبرها عنصر إذا بدك يعتبرها نص أكتبها بالشكل
+            | a ===> Text (| bibeline)
+            a ===> Element
+//- Example 1:
+    Write This By PugJS :
+        <p>I Love <b>PugJS<b> And<b> SASS</b></p>
+p I Love
+    b PugJS
+    | And 
+    b SASS
+//- OR
+p 
+    | I Love
+    b PugJS
+    | And 
+    b SASS
+//- The output is : <p>I Love<b>PugJS</b>And <b>SASS</b></p>
+p 
+    | This is a paragragh
+//- لأنه سيعتبرها أبن لأب في الأعلى
+    <p>
+        This is a paragragh</p>
+    
+
+
+
+    لجعل عنصر يأخذ سطر كامل لحالو ضع قبله علامتي | حيث أن كل منها في سطر لحالو
+    For Example :
+    |
+    |
+    a Nour
+
+    ===> النتيجة ستكون بالشكل ===> <a>Nour</a>
+    
+
+    That means :
+    1 - For ELement (Take Whole Line) :
+    |
+    |
+    nameElement Content
+    2 - For Text (Take Whole Line) :
+    |
+    | Text
+    3 - For Text (Doesn't Take Whole Line) :
+    | Text
+    4 - . bloack :
+    .
+        Text
+    تعترف بالنص على أنه نص عادي ولكن أي شي بالنص هو نص عادي أيضاً حتى لو كانت إشارة | فهي نص عادي في نظره
+    يمكنك استخدام . مع | لعمل محتوى في سطر منفصل ولكن
+    .
+        |
+        Mohamed
+    راح يطف سطر ولكن راح تنطبع إشارة | في السطر العلوي
+
+    الحل الصح هو :
+    |
+    |
+    .
+        Text
+p Mohamed Nour Abdo
+|
+|
+.
+    Nour
+
+Lesson 6 ===> Attributes
+Part(1) :
+1 - Syntax ===> nameElement(attr1, attr2, ...) contentElement
+2 - nameElement.nameClass contentElement
+3 - nameElement#nameId contentElement
+4 - .nameClass contentElement ===> Build Element By Div ===> <div> Content </div>
+Part(2) :
+Another Syntax for Attribute :
+(A)
+nameElement(
+    attr1=v1,
+    attr2=v2,
+    ...
+) contentElement
+(B)
+nameElement(
+    attr1=v1,
+    attr2=v2,
+    ...
+    style="color: red; ..."
+    or
+    style={"color":"red", "font-size":"20px"} ===> Way Object
+) contentElement
+//- Examples :
+|
+|
+img(src="...", alt="Error in Image Location")
+|
+|
+a(href="https://youtube.com") Youtube
+
+p(
+    style={"color":"red", "font-size":"20px"}
+) Mohamed Nour 
