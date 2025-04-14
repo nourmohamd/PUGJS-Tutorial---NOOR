@@ -350,3 +350,104 @@ ul
     <ul>
         <li>There are no values</li>
     </ul>
+
+Lesson 10 ===> Interbolation
+A - String
+    a - Enscaped
+        Example :
+        - var a = `<a>A</a>`;
+        p Hellp #{a}
+        هنا سيرجع كل شكل خاص لكوده في الانتيتيس
+    b - Unescaped
+        Example :
+        - var a = `<a>A</a>`;
+        p Hellp !{a}
+        هنا سيرجع النص على حاله
+B - Tag
+    a - Tag Interbolation
+        Example :
+        p Hello #[b Mohamed]
+        #[Code Of Pug]
+//- ملاحظة إذا سبقت الانتربوليشن ب\ كأنك عم تقول للمترجم اطبعلي الانتربوليشن على حالها
+//- #{`#{Nour}`} ===> Print #{Nour}
+
+Lesson 11 ===> Mixins ===> عبارة عن قطعة من الكود استخدمها في أي مكان بدي ياه
+Syntax :
+    mixin nameMixin
+        ............
+        ...تفاصيل...
+        ............
+    الأستدعاء
+    +nameMixin
+    Or
+    mixin nameMixin(title, ..., parameters)
+        ............
+        ...تفاصيل...
+        ............
+    +nameMixin(ValuesOfParametrs)
+//- Example :
+mixin list
+    ul 
+        li Home 
+        li Contact Us 
+        li Portfolio
++list
+//- ينصح بعمل ملف خاص بالمكسين وعمل تضمين له في بداية البغ
+//- 
+    Main Pug===> Include Style.Pug
+            ===> Include Mixin.pug
+            ===> Include Variable.pug
+    في هذه الحالة أي شيء وفي أي مكان سيتم قراءته من خلال أي ملف لأنه فعلياً كل الملفات صارو جزء لا يتجزأ متصلين
+
+Lesson 12 ===> Inheritance ===> نظام الوراثة في البغ جي أس
+إن مفهوم الوراثة في الساس يختلف عن هنا لأن في الساس يتم توريث شيء معين دون التعديل عليه أما في البغ يتم توريث شيء معين مع التعديل على شيء منه وذلك عبر كتابة الأمر التالي
+block anyName
+    التعليمات التي تريد تبديلها في حال ورثت الملف
+طريقة الوراثة أكتب ===> extends nameFilePug.pug
+ثم إذا بدك تعدل على جزء من الصفحة أكتب أسم البلوك ثمطف سطر ثم تاب ثم محتوى جديد بالشكل
+block nameBloack
+    newContent
+الوراثة بتصير لملف كامل حصراً
+1 - تعلمنا أننا نستطيع الوراثة مع التعديل جزء من الملف
+2 - block append nameBlock
+        newContentAfterBlock
+3 - block prepend nameBlock
+        newContentBeforeBlock
+حالة الأستبدال هي الحالة الأفتراضية للبلوك
+
+Lesson 12 ===> Switch Case Statement ===> Case
+//- Example 1:
+- var friends = 10
+case friends
+  when 0
+    p you have no friends
+  when 1
+    p you have a friend
+  default
+    p you have #{friends} friends
+//- <p>you have 10 friends</p>
+//- Example 2:
+- var friends = 0
+case friends
+  when 0
+  when 1
+    p you have very few friends
+  default
+    p you have #{friends} friends
+//- <p>you have very few friends</p>
+//- Example 3:
+- var friends = 0
+case friends
+  when 0
+    - break
+  when 1
+    p you have very few friends
+  default
+    p you have #{friends} friends
+//- Don't have any output
+//- Example 4 (Block Expansion):
+- var friends = 1;
+case friends
+  when 0: p you have no friends
+  when 1: p you have a friend
+  default: p you have #{friends} friends
