@@ -13,6 +13,8 @@ cli ===> Stands From Command Line Interface
 =========================================================
 ===> How Do You Run PugJS File << Very Important >>  <===
 =========================================================
+Note: Create File In Your Box ( Project ) ===> nameFile.pug
+
 1 - Open Node.js Command Prompt
 2 - Write ===> pug path-of-file-pug -w ===> For Make Watching For Pug File
 3 - For Out From Watching Mode Click ===> Ctrl + c
@@ -299,7 +301,7 @@ For - While - Each
         3 - Each Loop
         Example :
         each val in [1, 2, 3, 4, 'Five', 6, 7, 8]
-            div = val
+            div= val
         Output is Some Divs
 //- Examples :
 each val,index in ["one", 2,3,4,"Five"]
