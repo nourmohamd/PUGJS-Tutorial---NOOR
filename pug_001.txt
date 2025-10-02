@@ -355,7 +355,7 @@ ul
 
 Lesson 10 ===> Interbolation
 A - String
-    a - Enscaped
+    a - Escaped
         Example :
         - var a = `<a>A</a>`;
         p Hellp #{a}
@@ -417,7 +417,7 @@ block nameBloack
         newContentBeforeBlock
 حالة الأستبدال هي الحالة الأفتراضية للبلوك
 
-Lesson 12 ===> Switch Case Statement ===> Case
+Lesson 13 ===> Switch Case Statement ===> Case
 //- Example 1:
 - var friends = 10
 case friends
@@ -441,12 +441,13 @@ case friends
 - var friends = 0
 case friends
   when 0
-    - break
+    p You Don't Have Any Friends
+    -break
   when 1
     p you have very few friends
   default
     p you have #{friends} friends
-//- Don't have any output
+//- You Don't Have Any Friends
 //- Example 4 (Block Expansion):
 - var friends = 1;
 case friends
